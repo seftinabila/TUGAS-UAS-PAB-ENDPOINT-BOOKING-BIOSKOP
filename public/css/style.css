@@ -1,0 +1,186 @@
+/* General Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f7fa;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #2f3542;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transition: all 0.3s ease;
+}
+
+.sidebar-header h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar-nav {
+    list-style-type: none;
+}
+
+.sidebar-nav li {
+    margin: 10px 0;
+}
+
+.sidebar-nav li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar-nav li a:hover {
+    background-color: #57606f;
+}
+
+/* Add Active State for Sidebar Menu */
+.sidebar-nav .active a {
+    background-color: #007bff; /* Contoh warna latar belakang */
+    color: white; /* Warna teks aktif */
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+    transition: margin-left 0.3s ease;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #2f3542;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: #57606f;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Page Heading */
+.page-heading {
+    margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Sidebar */
+    .sidebar {
+        position: absolute;
+        width: 200px;
+        height: 100%;
+        top: 0;
+        left: -200px;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    /* Navbar */
+    .navbar-left {
+        display: block;
+    }
+
+    .navbar-right {
+        display: block;
+    }
+
+    /* Mobile Menu Toggle */
+    .sidebar-toggle {
+        font-size: 25px;
+        display: inline-block;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    /* Add Active State for Sidebar Menu on Mobile */
+    .sidebar-nav .active a {
+        background-color: #007bff; /* Contoh warna latar belakang */
+        color: white; /* Warna teks aktif */
+    }
+}
+#seat-selection {
+    display: flex;
+    flex-direction: column; /* Susunan baris vertikal */
+    gap: 10px; /* Jarak antar baris */
+    margin-top: 10px;
+    }
+
+    .seat-row {
+        display: flex;
+        flex-wrap: nowrap; /* Baris tidak membungkus */
+        gap: 5px; /* Jarak antar tombol kursi */
+        align-items: center; /* Rata tengah teks baris */
+    }
+
+    #seat-selection button {
+        width: 40px; /* Lebar tombol */
+        height: 40px; /* Tinggi tombol */
+        text-align: center;
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 0;
+        margin: 0;
+    }
+
+    button.selected {
+        background-color: #0d6efd !important; /* Warna biru untuk kursi yang dipilih */
+        color: white;
+    }
+
+    button.disabled {
+        background-color: #aaa4a4;
+        cursor: not-allowed;
+    }
+
